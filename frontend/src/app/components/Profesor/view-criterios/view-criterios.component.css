@@ -1,0 +1,50 @@
+table {
+    width: 100%;
+    height: 100%;
+}
+
+tr.mat-footer-row,
+mat-header-cell {
+    font-weight: bold;
+    color: black;
+}
+
+mat-icon {
+    font-size: large;
+}
+
+.nombre {
+    width: 50%;
+}
+
+.porcentaje {
+    width: 20%;
+}
+
+.icons {
+    width: 30%;
+}
+
+.porcentaje,
+.icons {
+    text-align: center;
+}
+
+.add {
+    color: green;
+}
+
+.view {
+    color: blue;
+}
+
+.delete {
+    color: red;
+}
+
+th {
+    color: #1b5583;
+    font-size: smaller;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}

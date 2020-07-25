@@ -1,0 +1,28 @@
+table {
+    width: 100%;
+}
+
+.check {
+    width: 25%;
+    text-align: center;
+}
+
+.nombre {
+    width: 55%;
+}
+
+.porcentaje {
+    text-align: center;
+    width: 20%;
+}
+
+th {
+    color: #1b5583;
+    font-size: smaller;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+mat-select {
+    text-align-last: center;
+}

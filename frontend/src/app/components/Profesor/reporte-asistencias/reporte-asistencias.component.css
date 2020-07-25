@@ -1,0 +1,11 @@
+.bg-blanco {
+    background-color: rgba(255, 255, 255, 0.459);
+}
+
+button {
+    outline: none;
+}
+
+mat-select {
+    text-align-last: center;
+}

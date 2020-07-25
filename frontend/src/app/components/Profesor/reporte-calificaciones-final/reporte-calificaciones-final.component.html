@@ -1,0 +1,31 @@
+<div class="container bg-blanco">
+    <div class="row">
+        <div class="col-md-12 m-auto">
+            <div class="row">
+                <div class="col-md-5">
+                    <mat-form-field appearance="outline" class="inputs">
+                        <mat-label>Seleccione la materia</mat-label>
+                        <mat-select [(ngModel)]="clave_materia" (selectionChange)="getGrupos()">
+                            <mat-option *ngFor="let materia of materiasUnique" [value]="materia.clave_materia">
+                                {{ materia.nombre_materia }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2">
+                    <mat-form-field appearance="outline" class="inputs">
+                        <mat-label>Grupo</mat-label>
+                        <mat-select [(ngModel)]="grupo" (selectionChange)="prepararData($event)">
+                            <mat-option *ngFor="let grupo of grupos" [value]="grupo.id_grupo">
+                                {{ grupo.clave_grupo }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <button mat-raised-button (click)="downloadPDF()" [disabled]="disableBtnDownload">Descargar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

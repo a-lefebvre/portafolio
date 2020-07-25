@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-9 text-white text-center">
+        Lista de actividades
+    </div>
+    <div class="col-md-3 ml-auto">
+        <button class="cerrar" (keydown)="key($event)" (click)=click()>X</button>
+    </div>
+</div>
+<div class="contenedor">
+    <div class="row">
+        <div class="col-md-4">
+            <button mat-button color="warn" (click)="disableBtnUpdate = !disableBtnUpdate">editar</button>
+        </div>
+        <div class="col-md-8 text-right">
+            <p class="subtitulo" *ngIf="disableBtnUpdate">Puntos totales: {{ getTotalPuntos() }}/100</p>
+        </div>
+    </div>
+    <mat-accordion class="scroll">
+        <p *ngIf="actividades.length == 0" class="subtitulo">Vacio</p>
+        <mat-expansion-panel *ngFor="let actividad of actividades">
+            <mat-expansion-panel-header>
+                <mat-panel-title class="titulo">
+                    {{actividad.nombre_actividad}}
+                </mat-panel-title>
+                <mat-panel-description *ngIf="disableBtnUpdate">
+                    {{actividad.valor}}%
+                </mat-panel-description>
+                <mat-panel-description *ngIf="!disableBtnUpdate">
+                    <input type="text" #calif [(ngModel)]="actividad.valor" (keypress)="validarNumero($event)" (keyup)="validaCantidad(calif)" [value]="validaCantidad(calif)">
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <!-- <mat-panel-description> -->
+            <p class="descripcion">Descripción: </p>{{actividad.descripcion}}
+            <!-- </mat-panel-description> -->
+            <mat-action-row>
+                <!-- <mat-icon (click)="updateActividad(actividad.id_actividad)" matTooltip="Presiona para editar esta actividad" matTooltipPosition='after'>edit</mat-icon> -->
+                <button mat-button (click)="updateActividad(actividad.id_actividad)" color="primary" *ngIf="!disableBtnUpdate">Actualizar</button>
+                <mat-icon (click)="deleteActividad(actividad.id_actividad)" matTooltip="Presiona para borrar esta actividad" matTooltipPosition='after'>delete</mat-icon>
+            </mat-action-row>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

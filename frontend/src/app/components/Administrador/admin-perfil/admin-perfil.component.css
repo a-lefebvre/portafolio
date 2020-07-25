@@ -1,0 +1,26 @@
+mat-drawer,
+mat-sidenav {
+    background-color: rgba(27, 84, 131, 0.8);
+}
+
+.imagen {
+    width: 30%;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.mat-button {
+    outline: none;
+}
+
+mat-card {
+    background-color: rgba(255, 255, 255, 0.904);
+}
+
+.mat-divider {
+    border-top-color: blue;
+}

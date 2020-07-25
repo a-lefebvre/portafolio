@@ -1,0 +1,15 @@
+mat-drawer,
+mat-sidenav {
+    background-color: rgba(27, 84, 131, 0.6);
+}
+
+.mat-button {
+    outline: none;
+}
+
+.dark-hamburguesa {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    width: auto;
+}

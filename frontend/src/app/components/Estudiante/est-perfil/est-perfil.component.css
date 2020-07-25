@@ -1,0 +1,30 @@
+.imagen {
+    width: 30%;
+    height: 30%;
+    border-radius: 50px;
+    margin: auto;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.mat-button {
+    outline: none;
+}
+
+.redondo {
+    border-radius: 50px;
+}
+
+mat-card {
+    background-color: rgba(255, 255, 255, 0.904);
+}
+
+.mat-divider {
+    border-top-color: blue;
+}
+
+.titulo-negro {
+    font-size: large;
+}

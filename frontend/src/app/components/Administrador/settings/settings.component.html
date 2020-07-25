@@ -1,0 +1,57 @@
+<div class="container  pt-1">
+    <mat-sidenav-container class="sidenav">
+        <mat-sidenav #sidenav [mode]="mode.value">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 mat-elevation-z8">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <button mat-button (click)="sidenav.toggle()">
+                                    <mat-icon class="hamburguesa">reorder</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-admin-navegacion>
+            </app-admin-navegacion>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 mat-elevation-z8">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <button mat-button (click)="sidenav.toggle()">
+                                    <mat-icon class="dark-hamburguesa">reorder</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-11 mat-elevation-z8 text-center">
+                        <h1 class="titulo-negro">Sección: configuración de archivos</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row mt-3">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <app-ajustes-file></app-ajustes-file>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <app-preview-file></app-preview-file>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,28 @@
+<mat-card>
+    <mat-card-title class="titulo-azul">
+        Sube imagen de encabezado de archivos
+    </mat-card-title>
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" name="encabezado" (change)="onChange($event)" accept=".jpeg, .jpg, .png" lang="es">
+        <label class="custom-file-label" for="encabezado">{{encabezado}}</label>
+    </div>
+</mat-card>
+<mat-card>
+    <mat-card-title class="titulo-azul">
+        Sube imagen de marca de agua de archivos
+    </mat-card-title>
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" name="marca" (change)="onChange($event)" accept=".jpeg, .jpg, .png" lang="es">
+        <label class="custom-file-label" for="marca">{{marca}}</label>
+    </div>
+</mat-card>
+<mat-card>
+    <mat-card-title class="titulo-azul">
+        Sube imagen de pie de pagina de archivos
+    </mat-card-title>
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" name="pie" (change)="onChange($event)" accept=".jpeg, .jpg, .png" lang="es">
+        <label class="custom-file-label" for="pie">{{pie}}</label>
+    </div>
+</mat-card>
+<button (click)="saveConfig()">Guardar configuración</button>

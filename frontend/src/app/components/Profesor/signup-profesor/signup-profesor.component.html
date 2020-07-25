@@ -1,0 +1,107 @@
+<div class="row">
+    <div class="col-md-3 ml-auto">
+        <button class="cerrar" (keydown)="keyPress($event)" (click)=click()>X</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <mat-card>
+            <div class="bg-azul">
+                <div class="imagen">
+                    <img mat-card-image class="img-fluid mx-auto" src="../../../assets/comunes/user.png" alt="login">
+                </div>
+                <div class="div-signup">
+                    <p class="inicioSesion">Registrate</p>
+                </div>
+            </div>
+            <form (ngSubmit)="validaProfesor()">
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field appearance="outline" class="inputs">
+                                        <mat-label>RFC</mat-label>
+                                        <input matInput [formControl]='rfcFormControl' (change)="validar()" keypress="validar()" [(ngModel)]='profesor.clave_profesor' name="clave_profesor" minlength="13" maxlength="13" placeholder="RFC">
+                                        <mat-error *ngIf="rfcFormControl.hasError('pattern') && !rfcFormControl.hasError('minlength') && !rfcFormControl.hasError('required')">
+                                            RFC <strong>inválido</strong>
+                                        </mat-error>
+                                        <mat-error *ngIf="rfcFormControl.hasError('minlength') && !rfcFormControl.hasError('required')">
+                                            RFC <strong>muy corto</strong>
+                                        </mat-error>
+                                        <mat-error *ngIf="rfcFormControl.hasError('required')">
+                                            RFC <strong>obligatorio</strong>
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field appearance="outline" class="inputs">
+                                <mat-label>Nombre(s)</mat-label>
+                                <input matInput [formControl]='nombreFormControl' (change)="validar()" [(ngModel)]='profesor.nombre' name="nombre" placeholder="Nombre(s)">
+                                <mat-error *ngIf="nombreFormControl.hasError('required')">
+                                    Nombre <strong>obligatorio</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6 inputs">
+                            <mat-form-field appearance="outline" class="inputs">
+                                <mat-label>Apellido(s)</mat-label>
+                                <input matInput [formControl]='apellidoFormControl' (change)="validar()" [(ngModel)]='profesor.apellido' name="apellido" placeholder="Apellido(s)">
+                                <mat-error *ngIf="nombreFormControl.hasError('required')">
+                                    Apellido <strong>obligatorio</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-12 inputs">
+                            <mat-form-field appearance="outline" class="inputs">
+                                <mat-label>Email</mat-label>
+                                <input matInput [formControl]="emailFormControl" (change)="validar()" [(ngModel)]='profesor.email' name="email" placeholder="Email">
+                                <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+                                    por favor ingresa un email válido
+                                </mat-error>
+                                <mat-error *ngIf="emailFormControl.hasError('required')">
+                                    Email <strong>obligatorio</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-12 inputs">
+                            <mat-form-field appearance="outline" class="inputs">
+                                <mat-label>Contraseña</mat-label>
+                                <input matInput [(ngModel)]="profesor.password" (change)="validar()" [type]="hide ? 'password' : 'text'" [formControl]="passFormControl" placeholder="Contraseña">
+                                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                                <mat-error *ngIf="passFormControl.hasError('minlength') && !passFormControl.hasError('required')">
+                                    Contraseña debe teenr al menos 6 caracteres
+                                </mat-error>
+                                <mat-error *ngIf="passFormControl.hasError( 'required') ">
+                                    Contraseña <strong>obligatoria</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-12 inputs ">
+                            <mat-form-field appearance="outline" class="inputs">
+                                <mat-label>Confirma tu contraseña</mat-label>
+                                <input matInput [(ngModel)]="confirm_password" (change)="validar()" [type]="hide ? 'password' : 'text'" [formControl]="confirm_passFormControl" placeholder="Contraseña">
+                                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                                <mat-error *ngIf="confirm_passFormControl.hasError( 'required') ">
+                                    Confirmacion <strong>obligatoria</strong>
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </mat-card-content>
+
+                <div class="container">
+                    <div class="row ">
+                        <div class="col-md-12 ">
+                            <button class="btn-block " mat-raised-button type="submit" [disabled]="disable">COMENZAR !!!</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <mat-card-actions>
+                </mat-card-actions> -->
+            </form>
+        </mat-card>
+    </div>
+</div>

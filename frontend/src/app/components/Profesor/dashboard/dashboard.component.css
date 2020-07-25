@@ -1,0 +1,18 @@
+mat-drawer,
+mat-sidenav {
+    background-color: rgba(27, 84, 131, 0.6);
+}
+
+.mat-button {
+    outline: none;
+}
+
+.final {
+    position: absolute;
+    bottom: 50px;
+}
+
+a {
+    color: white;
+    font-weight: bold;
+}

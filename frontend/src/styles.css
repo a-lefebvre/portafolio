@@ -1,0 +1,279 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+html,
+body {
+    height: 100%;
+    background-image: url('assets/fondos/fondo-patron.png');
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.borde {
+    border: double;
+    border-radius: 10px;
+}
+
+.inputs {
+    width: 100%;
+}
+
+.bg-azul {
+    background: #1b5583;
+}
+
+.bg-gradient {
+    background: rgba(250, 251, 252, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 72%, rgba(27, 85, 131, 1) 79%, rgba(27, 85, 131, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(250, 251, 252, 1)), color-stop(72%, rgba(250, 251, 252, 1)), color-stop(79%, rgba(27, 85, 131, 1)), color-stop(100%, rgba(27, 85, 131, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 72%, rgba(27, 85, 131, 1) 79%, rgba(27, 85, 131, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 72%, rgba(27, 85, 131, 1) 79%, rgba(27, 85, 131, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 72%, rgba(27, 85, 131, 1) 79%, rgba(27, 85, 131, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 72%, rgba(27, 85, 131, 1) 79%, rgba(27, 85, 131, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fafbfc', endColorstr='#1b5583', GradientType=1);
+}
+
+.titulo {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.4em;
+    font-family: 'Helvetica', 'Verdana', 'Monaco', sans-serif;
+    color: #1b5583;
+}
+
+.titulo-negro {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-family: 'Helvetica', 'Verdana', 'Monaco', sans-serif;
+    color: black;
+    text-transform: uppercase;
+}
+
+.titulo-azul {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: 'Helvetica', 'Verdana', 'Monaco', sans-serif;
+    color: #1b5583;
+}
+
+.bg-azul-txt-white {
+    background: #1b5583;
+    color: white;
+}
+
+.bg-azul-transparente {
+    background-color: rgba(27, 85, 131, 0.7);
+}
+
+.c-primary {
+    color: rgb(#1b5583);
+}
+
+.mat-raised-button {
+    background-color: #1b5583;
+    border-radius: 0 px !important;
+    color: white;
+    outline: none;
+}
+
+.tabla-head {
+    color: #1b5583;
+    font-size: large;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+mat-drawer-content,
+mat-sidenav-content {
+    background-color: rgba(182, 220, 250, 0.589);
+}
+
+mat-drawer-container,
+mat-sidenav-container {
+    min-height: 100%;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    /* background-image: url('assets/fondos/fondo-patron.jpg'); */
+    background-image: url('assets/fondos/patronLogo.png');
+}
+
+.fa-plus-circle {
+    color: green;
+}
+
+.fa-eye {
+    color: blue;
+}
+
+.fa-chart-line,
+.fa-home {
+    color: yellow;
+    margin-right: 2mm;
+    margin-left: 2mm;
+}
+
+.fa-users,
+.fa-user,
+.fa-chalkboard-teacher,
+.fa-buffer,
+.fa-tasks,
+.fa-file-alt,
+.fa-chart-bar {
+    color: lightskyblue;
+    margin-right: 2mm;
+    margin-left: 2mm;
+}
+
+.fa-trash-alt,
+.fa-sign-out-alt,
+.fa-arrow-circle-left {
+    color: red;
+}
+
+.fa-plus-circle,
+.fa-eye,
+.fa-users,
+.fa-user,
+.fa-sign-out-alt,
+.fa-arrow-circle-left {
+    margin-right: 2mm;
+}
+
+.saludo {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-style: italic;
+}
+
+.inicioSesion {
+    font-family: "Arial Narrow", Arial, sans-serif;
+    font-style: italic;
+    font-size: 2em;
+    color: white;
+}
+
+.sidenav {
+    width: 100%;
+    height: 595px;
+    margin: 10px;
+    border: 1px solid #555;
+}
+
+.side {
+    width: 200px;
+    padding-left: 20px;
+    text-align: left;
+    background-color: #1b5583;
+}
+
+.bg-noche {
+    background: rgba(250, 251, 252, 1);
+    background: -moz-radial-gradient(center, ellipse cover, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 54%, rgba(106, 112, 186, 1) 84%, rgba(27, 85, 131, 1) 98%, rgba(27, 85, 131, 1) 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(250, 251, 252, 1)), color-stop(54%, rgba(250, 251, 252, 1)), color-stop(84%, rgba(106, 112, 186, 1)), color-stop(98%, rgba(27, 85, 131, 1)), color-stop(100%, rgba(27, 85, 131, 1)));
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 54%, rgba(106, 112, 186, 1) 84%, rgba(27, 85, 131, 1) 98%, rgba(27, 85, 131, 1) 100%);
+    background: -o-radial-gradient(center, ellipse cover, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 54%, rgba(106, 112, 186, 1) 84%, rgba(27, 85, 131, 1) 98%, rgba(27, 85, 131, 1) 100%);
+    background: -ms-radial-gradient(center, ellipse cover, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 54%, rgba(106, 112, 186, 1) 84%, rgba(27, 85, 131, 1) 98%, rgba(27, 85, 131, 1) 100%);
+    background: radial-gradient(ellipse at center, rgba(250, 251, 252, 1) 0%, rgba(250, 251, 252, 1) 54%, rgba(106, 112, 186, 1) 84%, rgba(27, 85, 131, 1) 98%, rgba(27, 85, 131, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#fafbfc', endColorstr='#1b5583', GradientType=1);
+}
+
+.mat-tooltip {
+    font-size: 14px !important;
+}
+
+.transparente100 {
+    background-color: rgba(255, 255, 255, 0.0);
+}
+
+.dialog-custom .mat-dialog-container {
+    background-color: rgba(27, 84, 131, 0.5);
+    padding-top: 0;
+}
+
+.hamburguesa {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    width: auto;
+}
+
+.hamburguesa-content {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    width: auto;
+}
+
+.dark-hamburguesa {
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    width: auto;
+}
+
+.mat-tab-label {
+    /* min-width: 25px !important; */
+    padding: 5px;
+    background-color: transparent;
+    color: black;
+    /* color: #1b5583; */
+    /* font-weight: 700; */
+    font-weight: bold;
+}
+
+.mat-tab-body-content {
+    height: 100%;
+}
+
+.bg-blanco {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.subtitulo {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: 'Helvetica', 'Verdana', 'Monaco', sans-serif;
+    color: #1b5583;
+}
+
+
+/* ---INPUT FILE CUSTOM */
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    /* overflow: hidden; */
+    /* position: absolute; */
+    /* z-index: -1;
+}
+
+.inputfile+label {
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 5px;
+    color: white;
+    background-color: #1b5583;
+    /* display: inline-block; */
+}
+
+.inputfile:focus+label,
+.inputfile+label:hover {
+    background-color: #ff7b00;
+    color: black;
+    font-family: "Arial Narrow", Arial, sans-serif;
+}
+
+.inputfile+label {
+    cursor: pointer;
+    /* "hand" cursor */
+}
+
+
+/* ----- */

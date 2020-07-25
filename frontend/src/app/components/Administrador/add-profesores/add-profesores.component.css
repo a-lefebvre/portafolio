@@ -1,0 +1,16 @@
+mat-card {
+    width: 100%;
+    max-width: 400px;
+}
+
+input {
+    outline: none;
+}
+
+button {
+    outline: none;
+}
+
+.custom-file-input~.custom-file-label::after {
+    content: "Buscar";
+}

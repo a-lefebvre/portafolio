@@ -1,0 +1,26 @@
+<button (click)="preview()">Ver vista previa</button>
+<button (click)="initPDF()">Descargar</button>
+<!-- <div class="header">
+    <img [src]="header" class="img-fluid">
+</div>
+<div class="watermark">
+    <img [src]="watermark" class="img-fluid">
+</div>
+<div class="footer">
+    <img [src]="footer" class="img-fluid">
+</div> -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col hoja">
+            <div class="header" *ngIf="header != ''">
+                <img [src]="header" class="img-fluid">
+            </div>
+            <div class="watermark" *ngIf="watermark != ''">
+                <img [src]="watermark" class="img-fluid">
+            </div>
+            <div class="footer" *ngIf="footer != ''">
+                <img [src]="footer" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>

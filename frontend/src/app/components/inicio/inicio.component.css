@@ -1,0 +1,73 @@
+button.mat-icon-button,
+mat-icon {
+    font-size: 20px;
+    width: auto;
+}
+
+.bg-azul-transparente {
+    height: 575px;
+    background-color: rgba(27, 84, 131, 0.8);
+    font-size: large;
+    font-weight: bold;
+    font-style: italic;
+    overflow: auto;
+}
+
+
+/* .contenedor {
+    height: 400px;
+} */
+
+.mat-icon-button {
+    background-color: rgba(255, 142, 28, 0.2);
+    /* outline-color: #1b5583; */
+    outline: none;
+}
+
+button.mat-menu-item {
+    background-color: rgba(28, 172, 255, 0.0);
+    /* outline-color: rgba(27, 84, 131, 0.2); */
+    outline: none;
+}
+
+button.mat-menu-item:hover {
+    background-color: rgba(27, 84, 131, 0.5);
+    color: #fff !important;
+}
+
+.inicio {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.pregunta {
+    font-size: medium;
+    color: whitesmoke;
+    font-style: normal;
+}
+
+.scroll {
+    position: absolute;
+    height: 70%;
+    overflow: scroll;
+}
+
+.dialog-custom {
+    margin-top: 50px;
+}
+
+mat-accordion,
+mat-expansion-panel {
+    padding: 0;
+    background-color: rgba(27, 84, 131, 0.1);
+}
+
+.pregunta {
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.manual {
+    color: orangered;
+}

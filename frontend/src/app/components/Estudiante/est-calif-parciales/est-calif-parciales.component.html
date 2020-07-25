@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-6 offset-md-2">
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Selecciona la unidad</mat-label>
+            <mat-select [(ngModel)]="unidad" (selectionChange)="createTabla()">
+                <mat-option *ngFor="let unidad of unidades" [value]="unidad">
+                    {{ unidad }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="col-md-8 offset-md-2 text-center" *ngIf="data.length == 0">
+        <h5 class="titulo-azul">No hay criterios registrados aun</h5>
+    </div>
+    <div class="col-md-12 scroll" *ngIf="data.length != 0">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- Checkbox Column -->
+            <ng-container matColumnDef="select">
+                <th class="check" mat-header-cell *matHeaderCellDef>Ver</th>
+                <td class="check" mat-cell *matCellDef="let row">
+                    <mat-checkbox (change)="$event ? selection.toggle(row) : null; getSeleccionado()" [checked]="selection.isSelected(row)" color="warn"></mat-checkbox>
+                </td>
+                <td mat-footer-cell *matFooterCellDef> </td>
+            </ng-container>
+
+            <!-- nombre Column -->
+            <ng-container matColumnDef="nombre_criterio">
+                <th class="nombre" mat-header-cell *matHeaderCellDef> Criterio </th>
+                <td class="nombre" mat-cell *matCellDef="let element"> {{element.nombre_criterio}} </td>
+                <td class="nombre" mat-footer-cell *matFooterCellDef> Total </td>
+            </ng-container>
+
+            <!-- porcentaje Column -->
+            <ng-container matColumnDef="porcentaje">
+                <th class="porcentaje" mat-header-cell *matHeaderCellDef> Porcentaje </th>
+                <td class="porcentaje" mat-cell *matCellDef="let element"> {{element.porcentaje}}% </td>
+                <td class="porcentaje" mat-footer-cell *matFooterCellDef> {{getTotalPorcentaje() / 100 | percent: '2.0'}} </td>
+            </ng-container>
+
+            <!-- obtenido Column -->
+            <ng-container matColumnDef="obtenido">
+                <th class="obtenido" mat-header-cell *matHeaderCellDef> Obtenido </th>
+                <td class="obtenido" mat-cell *matCellDef="let element"> {{element.porcentaje_obtenido}}% </td>
+                <td class="obtenido" mat-footer-cell *matFooterCellDef> {{getTotalObtenido() / 100 | percent: '2.1'}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+mat-drawer,
+mat-sidenav {
+    background-color: rgba(27, 84, 131, 0.6);
+}
+
+.mat-button {
+    outline: none;
+}
+
+mat-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0;
+    height: 100%;
+    width: 90%;
+}
+
+.scroll {
+    height: 90px;
+    overflow: scroll;
+}
+
+.scrollHead {
+    display: table;
+    height: 40px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.hijo {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.text-white {
+    font-family: 'Helvetica', 'Verdana', 'Monaco', sans-serif;
+    font-size: large;
+    font-style: italic;
+    font-weight: bold;
+}

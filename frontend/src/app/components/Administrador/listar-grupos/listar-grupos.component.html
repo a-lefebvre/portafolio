@@ -1,0 +1,80 @@
+<mat-form-field>
+    <input class="filtro" matInput (keyup)="applyFilter($event.target.value)" placeholder="Buscar">
+</mat-form-field>
+<div class="scroll">
+    <table mat-table [dataSource]="grupos" matSort class="mat-elevation-z8">
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+            <th class="borrar" mat-header-cell *matHeaderCellDef>
+                <button mat-button (click)="deleteGrupo()">Borrar</button>
+            </th>
+            <td class="borrar" class="checks" mat-cell *matCellDef="let row">
+                <mat-radio-group class="example-radio-group" [(ngModel)]="id_grupo">
+                    <mat-radio-button class="example-radio-button" [value]="row" color="warn">
+
+                    </mat-radio-button>
+                </mat-radio-group>
+                <!-- <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)" color="warn" [aria-label]="checkboxLabel(row)">
+                </mat-checkbox>  -->
+            </td>
+        </ng-container>
+
+        <!-- Clave Column -->
+        <ng-container matColumnDef="clave_profesor">
+            <th class="rfc" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">RFC</p>
+            </th>
+            <td class="rfc" mat-cell *matCellDef="let element"> {{element.clave_profesor}} </td>
+        </ng-container>
+
+        <!-- nombre Column -->
+        <ng-container matColumnDef="profesor">
+            <th class="nombre" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Profesor</p>
+            </th>
+            <td class="nombre" mat-cell *matCellDef="let element"> {{element.nombre}} {{element.apellido}}</td>
+        </ng-container>
+
+        <!-- clave materia Column -->
+        <!-- <ng-container matColumnDef="clave_materia">
+            <th class="centrar" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Clv Materia</p>
+            </th>
+            <td class="centrar" mat-cell *matCellDef="let element"> {{element.clave_materia}} </td>
+        </ng-container> -->
+
+        <!-- clave materia Column -->
+        <ng-container matColumnDef="nombre_materia">
+            <th class="materia" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Materia</p>
+            </th>
+            <td class="materia" mat-cell *matCellDef="let element"> {{element.nombre_materia}} </td>
+        </ng-container>
+
+        <!-- clave grupo Column -->
+        <ng-container matColumnDef="clave_grupo">
+            <th class="centrar grupo" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Grupo</p>
+            </th>
+            <td class="centrar grupo" mat-cell *matCellDef="let element"> {{element.clave_grupo}} </td>
+        </ng-container>
+
+        <!-- clave hora Column -->
+        <!-- <ng-container matColumnDef="hora_inicio">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">H Inicio</p>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.hora_inicio}} </td>
+        </ng-container> -->
+
+        <!-- clave hora fin Column -->
+        <!-- <ng-container matColumnDef="hora_final">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">H Final</p>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.hora_inicio}} </td>
+        </ng-container> -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+    </table>
+</div>

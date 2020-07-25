@@ -1,0 +1,53 @@
+<div class="container bg-blanco">
+    <div class="row">
+        <div class="col-md-8 offset-md-2 bg-blanco mat-elevation-z8">
+            <div class="row">
+                <div class="col-md-4">
+                    <mat-form-field appearance="outline" class="inputs">
+                        <mat-label>Seleccione la materia</mat-label>
+                        <mat-select [(ngModel)]="clave_materia" (selectionChange)="getGrupos()">
+                            <mat-option *ngFor="let materia of materiasUnique" [value]="materia.clave_materia">
+                                {{ materia.nombre_materia }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3">
+                    <mat-form-field appearance="outline" class="inputs">
+                        <mat-label>Seleccione el grupo</mat-label>
+                        <mat-select [(ngModel)]="group" (selectionChange)="generateGrafics($event)">
+                            <mat-option *ngFor="let grupo of grupos" [value]="grupo.id_grupo">
+                                {{ grupo.clave_grupo }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4 offset-md-1" *ngIf="clave_grupo != ''">
+                    <h1 class="titulo-negro">Cantidad de estudiantes: {{total_estudiantes}}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container">
+                <h5 class="text-center">Aprobados/Reprobados por materia</h5>
+                <mat-divider></mat-divider>
+                <canvas height="125" baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType" [options]="pieChartOptions" [plugins]="pieChartPlugins" [colors]="pieChartColors" [legend]="pieChartLegend">
+          </canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container">
+                <h5 class="text-center">Aprobados/Reprobados por unidad</h5>
+                <mat-divider></mat-divider>
+                <canvas baseChart height="125" [datasets]="lineChartData" [labels]="lineChartLabels" [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType" [plugins]="lineChartPlugins"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6 offset-md-3">
+            <div class="container">
+                <h5 class="text-center">Asistencias por unidad</h5>
+                <mat-divider></mat-divider>
+                <canvas height="120" baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+            </div>
+        </div>
+    </div>

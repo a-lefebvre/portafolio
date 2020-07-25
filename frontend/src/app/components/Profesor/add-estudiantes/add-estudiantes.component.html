@@ -1,0 +1,14 @@
+<mat-card class="mat-elevation-z8">
+    <mat-card-content>
+        <mat-card-title class="titulo-azul">Subir archivo de estudiantes</mat-card-title>
+        <div class="custom-file">
+            <input type="file" class="custom-file-imput" id="input-custom-file" (change)="onChange($event)" accept=".xlsx, .csv">
+            <label class="custom-file-label" for="input-custom-file">{{nameArchivo}}</label>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button *ngIf="!format" (click)="validaEstudiantes()" [disabled]="disableBtn">Guardar</button>
+        <button mat-raised-button *ngIf="!format" (click)="viewEstudiantes()" [disabled]="disableBtn">Visualizar</button>
+        <app-generate-formato tipo="estudiantes" *ngIf="format"></app-generate-formato>
+    </mat-card-actions>
+</mat-card>

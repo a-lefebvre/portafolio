@@ -1,0 +1,56 @@
+<mat-card class="mat-elevation-z8">
+    <form (ngSubmit)="validaMateria()">
+        <mat-card-content>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field appearance="outline" class="inputs">
+                        <mat-label>Clave</mat-label>
+                        <input matInput [formControl]='claveFormcontrol' (change)="validar()" (keypress)="validarClave($event)" (keyup)="validar(); toMayus()" [(ngModel)]='materia.clave_materia' maxlength="7" name="clave" placeholder="Clave de materia">
+                        <mat-error *ngIf=" claveFormcontrol.hasError('pattern')&& !claveFormcontrol.hasError('minlength') && !claveFormcontrol.hasError('required')">
+                            Clave <strong>invalida</strong>
+                        </mat-error>
+                        <mat-error *ngIf="claveFormcontrol.hasError('minlength') && !claveFormcontrol.hasError('required')">
+                            Clave <strong>muy corta</strong>
+                        </mat-error>
+                        <mat-error *ngIf="claveFormcontrol.hasError('required')">
+                            Clave <strong>obligatoria</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-12 inputs">
+                    <mat-form-field appearance="outline" class="inputs">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput [formControl]='nombreFormcontrol' (change)="validar()" (keypress)="validarLetra($event)" (keyup)="validar(); toMayus()" [(ngModel)]='materia.nombre_materia' name="nombre" placeholder="Nombre de materia">
+                        <!-- <mat-error *ngIf="nombreFormcontrol.hasError('pattern') && !nombreFormcontrol.hasError('required')">
+                            Nombre <strong>inválido</strong>
+                        </mat-error> -->
+                        <mat-error *ngIf="nombreFormcontrol.hasError('required')">
+                            Nombre <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4 inputs">
+                    <mat-form-field appearance="outline" class="inputs">
+                        <mat-label>Unidades</mat-label>
+                        <input matInput [formControl]="unidadFormcontrol" (change)="validar()" (keyup)="validar()" (keypress)="validarNumero($event)" [(ngModel)]='materia.unidades' maxlength="1" name="unidades" placeholder="Unidades">
+                        <mat-error *ngIf="unidadFormcontrol.hasError('min') && !unidadFormcontrol.hasError('required')">
+                            Por favor ingresa un número de unidades válido
+                        </mat-error>
+                        <mat-error *ngIf="unidadFormcontrol.hasError('required')">
+                            Nùmero de unidades <strong>obligatorio</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="container ">
+                <div class="row ">
+                    <div class="col-md-12 ">
+                        <button class="btn-block " mat-raised-button type="submit" [disabled]="disableBtnSave">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </mat-card-actions>
+    </form>
+</mat-card>

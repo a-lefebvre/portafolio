@@ -1,0 +1,25 @@
+<div class="row">
+    <div class="col-md-12">
+        <mat-card>
+            <mat-card-title class="titulo-azul">
+                Sube tu archivo de grupos
+            </mat-card-title>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="input-custom-file" (change)="onChange($event)" accept=".xlsx, .csv" lang="es">
+                <label class="custom-file-label" for="input-custom-file">{{nameArchivo}}</label>
+            </div>
+        </mat-card>
+    </div>
+    <div class="col-md-12 mt-2" *ngIf="!disableOptions">
+        <mat-divider></mat-divider>
+    </div>
+    <div class="col-md-12">
+        <button mat-raised-button class="btn btn-block" *ngIf="!disableOptions" (click)="viewGrupos()" matTooltip="Presiona para visualizar los grupos a subir" matTooltipPosition='before'>Visualizar</button>
+    </div>
+    <div class="col-md-12 mt-2" *ngIf="!disableOptions">
+        <mat-divider></mat-divider>
+    </div>
+    <div class="col-md-12" *ngIf="!disableOptions">
+        <button mat-raised-button class="btn btn-block" (click)="validarGrupos()">Confirmar</button>
+    </div>
+</div>

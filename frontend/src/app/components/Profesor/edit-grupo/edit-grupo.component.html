@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-md-11">
+        <div class="row">
+            <div class="col-md-9">
+                <h1 class="titulo-negro">Materia: {{grupo.nombre_materia}}</h1>
+            </div>
+            <div class="col-md-3 text-right">
+                <h1 class="titulo-negro">Grupo: {{grupo.clave_grupo}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1 ml-auto">
+        <button (keydown)="key($event)" (click)=click()>X</button>
+    </div>
+</div>
+<mat-tab-group mat-align-tabs="center" class="bg-white" tabindex="0" (keydown)="key($event)" (focusChange)="prueba($event)">
+    <mat-tab label="Pase de lista">
+        <div class="container">
+            <app-lista-asistencia></app-lista-asistencia>
+        </div>
+    </mat-tab>
+    <mat-tab label="Agregar Estudiantes">
+        <div class="container mt-3 p-3">
+            <div class="row">
+                <div class="col-md-6 offset-md-3 text-center">
+                    <mat-slide-toggle [checked]='checked' color="warn" (change)="cambiar()">
+                        <h5 *ngIf="!checked">Manual</h5>
+                        <h5 *ngIf="checked">Desde archivo</h5>
+                    </mat-slide-toggle>
+                </div>
+                <div class="col-md-6 offset-md-3 mt-3">
+                    <div *ngIf="!checked">
+                        <app-add-estudiante></app-add-estudiante>
+                    </div>
+                    <div *ngIf="checked">
+                        <app-add-estudiantes></app-add-estudiantes>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row justify-content-center">
+                <div class="col">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <p>Agregar estudiantes de forma: </p>
+                                <mat-slide-toggle [checked]='checked' color="warn" (change)="cambiar()">
+                                    <h5 *ngIf="!checked">Manual</h5>
+                                    <h5 *ngIf="checked">Desde archivo</h5>
+                                </mat-slide-toggle>
+                            </div>
+                            <div class="col-md-12">
+                                <div *ngIf="!checked">
+                                    <app-add-estudiante></app-add-estudiante>
+                                </div>
+                                <div *ngIf="checked">
+                                    <app-add-estudiantes></app-add-estudiantes>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-7">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12 text-center">
+                                <app-delete-estudiante></app-delete-estudiante>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </mat-tab>
+    <mat-tab label="Criterios">
+        <div class="container mt-3">
+            <app-add-criterio></app-add-criterio>
+        </div>
+    </mat-tab>
+    <mat-tab label="Calificar">
+        <div class="container mt-3">
+            <app-calificaciones></app-calificaciones>
+        </div>
+    </mat-tab>
+</mat-tab-group>

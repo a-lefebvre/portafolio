@@ -1,0 +1,42 @@
+.imagen {
+    width: 30%;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.cuenta {
+    font-size: 11px;
+}
+
+a {
+    color: blue;
+    font-weight: bold;
+}
+
+.div-login {
+    text-align: center;
+}
+
+.card-header-text {
+    font-size: 2em;
+    font-style: normal;
+    font-weight: bold;
+}
+
+mat-card {
+    background-color: rgba(255, 255, 255, 0.904);
+}
+
+.cerrar {
+    width: 100%;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.479);
+    outline: none;
+    border: white;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+}

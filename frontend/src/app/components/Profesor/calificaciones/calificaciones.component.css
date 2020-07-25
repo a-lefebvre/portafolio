@@ -1,0 +1,40 @@
+table {
+    width: 100%;
+    height: 100%;
+}
+
+input {
+    width: 50px;
+}
+
+.subtitulo {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1em;
+    font-family: 'Helvetica', 'Verdana', 'Monaco', sans-serif;
+    color: #1b5583;
+}
+
+.scroll {
+    height: 50px;
+    width: 100%;
+    overflow: scroll;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+button {
+    outline: none;
+}
+
+mat-select {
+    text-align-last: center;
+}

@@ -1,0 +1,20 @@
+<p class="titulo-negro">
+    Actividades</p>
+<div class="row scroll mt-5" *ngIf="actividades.length != 0">
+    <div class="col">
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let actividad of actividades">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="titulo-negro">
+                        {{actividad.nombre_actividad}}
+                    </mat-panel-title>
+                    <mat-panel-description class="titulo-gris">
+                        Valor: {{actividad.valor}}%.
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <p class="descripcion">Descripción: </p>{{actividad.descripcion}}
+
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+</div>

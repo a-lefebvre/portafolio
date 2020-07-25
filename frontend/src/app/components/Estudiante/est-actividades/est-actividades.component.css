@@ -1,0 +1,24 @@
+.titulo-negro {
+    font-size: small;
+}
+
+.scroll {
+    height: 300px;
+    overflow: auto;
+}
+
+.titulo-gris {
+    font-style: italic;
+    font-weight: bold;
+    font-size: small;
+    font-family: 'Helvetica', 'Verdana', 'Monaco', sans-serif;
+}
+
+.mat-expansion-panel-header-description {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.descripcion {
+    font-weight: bold;
+}

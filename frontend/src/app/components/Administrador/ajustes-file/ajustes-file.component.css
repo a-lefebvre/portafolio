@@ -1,0 +1,15 @@
+button {
+    outline: none;
+}
+
+.custom-file-input~.custom-file-label::after {
+    content: "Buscar";
+}
+
+.custom-file {
+    width: 100%;
+}
+
+.titulo-azul {
+    font-size: 1em;
+}

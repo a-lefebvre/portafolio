@@ -1,0 +1,11 @@
+input {
+    outline: none;
+}
+
+button {
+    outline: none;
+}
+
+.custom-file-input~.custom-file-label::after {
+    content: "Buscar";
+}

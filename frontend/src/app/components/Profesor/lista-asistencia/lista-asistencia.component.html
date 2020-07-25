@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col-md-3 mt-1">
+        <p class="subtitulo">Fecha: {{fechaLetra}}</p>
+    </div>
+    <div class="col-md-3 mt-1">
+        <mat-form-field appearance="outline" class="inputs">
+            <mat-label>Seleccione la unidad</mat-label>
+            <mat-select [(ngModel)]="unidad" (ngModelChange)="getLista()">
+                <mat-option *ngFor="let unidad of unidades" [value]="unidad">
+                    {{ unidad }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="col-md-3 mt-1">
+        <button mat-raised-button (click)="validaDay('save')" *ngIf="visibilityBtn">Guardar registro</button>
+        <button mat-raised-button (click)="updateAsistencia()" *ngIf="!visibilityBtn">Actualizar registro</button>
+    </div>
+    <div class="col-md-10 offset-md-1">
+        <mat-dialog-content>
+            <div class="container">
+                <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                    <ng-container matColumnDef="delete">
+                        <th class="borrar" mat-header-cell *matHeaderCellDef>
+                            <button mat-button (click)="deleteEstudiante()">Borrar</button>
+                        </th>
+                        <td class="borrar" class="checks" mat-cell *matCellDef="let row">
+                            <mat-radio-group class="example-radio-group" [(ngModel)]="num_control">
+                                <mat-radio-button class="example-radio-button" [value]="row" color="warn" (change)="desMarck()">
+
+                                </mat-radio-button>
+                            </mat-radio-group>
+                        </td>
+                    </ng-container>
+
+                    <!-- control Column -->
+                    <ng-container matColumnDef="num_control">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                            <p class="tabla-head">Nº Control</p>
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.num_control}} </td>
+                    </ng-container>
+
+                    <!-- Name Column -->
+                    <ng-container matColumnDef="nombre_est">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                            <p class="tabla-head">Nombre</p>
+                        </th>
+                        <td mat-cell *matCellDef="let element"> {{element.nombre_est}} </td>
+                    </ng-container>
+
+                    <!-- Checkbox Column -->
+                    <ng-container matColumnDef="select">
+                        <th mat-header-cell *matHeaderCellDef>
+                            <button mat-raised-button (click)="masterToggle()" matTooltip="Presiona para marcar o desmarcar todos" matTooltipPosition='above'>Todos</button>
+                        </th>
+                        <td mat-cell *matCellDef="let row" class="checks">
+                            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)" color="warn" [aria-label]="checkboxLabel(row)">
+                            </mat-checkbox>
+                        </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)">
+                    </tr>
+                </table>
+            </div>
+        </mat-dialog-content>
+    </div>
+</div>

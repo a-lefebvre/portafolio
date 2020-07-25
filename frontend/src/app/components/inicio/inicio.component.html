@@ -1,0 +1,85 @@
+<div class="container-fluid overflow-auto">
+    <div class="row">
+        <div class="col-md-9 ">
+            <div class="container text-right">
+                <button mat-icon-button class="inicio" [matMenuTriggerFor]="menu">
+                    Inicia Sesión
+                  </button>
+                <mat-menu class="transparente100" #menu="matMenu" xPosition="before">
+                    <button mat-menu-item (click)="openDialogProfe()">
+                        <mat-icon>person</mat-icon>
+                        <span>Profesor</span>
+                    </button>
+                    <button mat-menu-item (click)="openDialogEst()">
+                        <mat-icon>school</mat-icon>
+                        <span>Estudiante</span>
+                    </button>
+                    <mat-divider></mat-divider>
+                    <button mat-menu-item (click)="openDialogAdmin()">
+                        <mat-icon>how_to_reg</mat-icon>
+                        <span>Jefe de Docencia</span>
+                    </button>
+                    <button mat-menu-item (click)="openDialogAdmin()">
+                        <mat-icon>supervised_user_circle</mat-icon>
+                        <span>Administrador</span>
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="col-md-3 bg-azul-transparente">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="text-white pregunta">
+                            ¿Cómo me registro?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description class="text-white">
+                        <div>
+                            <img class="img-fluid" src="../../../assets/respuestas/registro.png" alt="">
+                        </div>
+                    </mat-panel-description>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="text-white pregunta">
+                            ¿Cómo inicio sesión?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description class="text-white">
+                        <div>
+                            <img class="img-fluid" src="../../../assets/respuestas/loginProf.png" alt="">
+                            <img class="img-fluid" src="../../../assets/respuestas/loginEst.png" alt="">
+                        </div>
+                    </mat-panel-description>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="text-white pregunta">
+                            ¿Cómo recibo notificaciones?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description class="text-white">
+                        <div>
+                            <img class="img-fluid" src="../../../assets/respuestas/notificaciones.png" alt="">
+                        </div>
+                    </mat-panel-description>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title class="text-white pregunta">
+                            ¿Cómo registro mi correo?
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-panel-description class="text-white">
+                        <div>
+                            <img class="img-fluid" src="../../../assets/respuestas/correo.png" alt="">
+                        </div>
+                    </mat-panel-description>
+                </mat-expansion-panel>
+
+            </mat-accordion>
+            <p class="pregunta mt-5 text-white">Para mas detalles, consulta el <a class="manual" type="button" href="/manuales/completo" target="_blank">Manual de usuario</a>.</p>
+        </div>
+    </div>
+</div>

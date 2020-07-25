@@ -1,0 +1,39 @@
+.scroll {
+    height: 350px;
+    overflow: scroll;
+    resize: none;
+    background-color: white;
+}
+
+.cerrar {
+    width: 100%;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.479);
+    outline: none;
+    border: white;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+}
+
+.contenedor {
+    background-color: white;
+    height: 95%;
+}
+
+.mat-expansion-panel-header-description {
+    display: flex;
+    justify-content: flex-end;
+}
+
+button {
+    outline: none;
+}
+
+.descripcion {
+    font-weight: bold;
+}
+
+.titulo {
+    font-weight: bold;
+    font-size: 1em;
+}

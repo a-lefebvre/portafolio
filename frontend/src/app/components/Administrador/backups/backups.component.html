@@ -1,0 +1,8 @@
+<p>backups works!</p>
+<button (click)="lapso = !lapso"></button>
+<mat-card *ngIf="lapso">
+    <mat-card-content>
+        <mat-progress-spinner color="primary" mode="indeterminate" value="30">
+        </mat-progress-spinner>
+    </mat-card-content>
+</mat-card>

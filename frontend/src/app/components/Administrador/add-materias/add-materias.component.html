@@ -1,0 +1,14 @@
+<mat-card class="mat-elevation-z8">
+    <mat-card-content>
+        <mat-card-title class="titulo-azul">Subir archivo de materias</mat-card-title>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="input-custom-file" (change)="onChange($event)" accept=".xlsx">
+            <label class="custom-file-label" for="input-custom-file">{{nameArchivo}}</label>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="validaMaterias()" [disabled]="disableBtn" *ngIf="!format">Guardar</button>
+        <app-generate-formato tipo="materias" *ngIf="format">
+        </app-generate-formato>
+    </mat-card-actions>
+</mat-card>

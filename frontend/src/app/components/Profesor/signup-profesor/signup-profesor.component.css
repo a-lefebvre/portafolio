@@ -1,0 +1,28 @@
+.registro {
+    width: 50%;
+    margin: auto;
+}
+
+.imagen {
+    width: 25%;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.img-fluid {
+    width: 100%;
+}
+
+.div-signup {
+    text-align: center;
+}
+
+.cerrar {
+    width: 100%;
+    color: white;
+    background-color: rgba(255, 0, 0, 0.479);
+    outline: none;
+    border: white;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%;
+}

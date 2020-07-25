@@ -1,0 +1,57 @@
+<div class="container  pt-1">
+    <mat-sidenav-container class="sidenav">
+        <mat-sidenav #sidenav [mode]="mode.value">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 mat-elevation-z8">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <button mat-button (click)="sidenav.toggle()">
+                                    <mat-icon class="hamburguesa">reorder</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-navegacion>
+            </app-navegacion>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 mat-elevation-z8">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <button mat-button (click)="sidenav.toggle()">
+                                    <mat-icon class="dark-hamburguesa">reorder</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-11 mat-elevation-z8 text-center">
+                        <h1 class="titulo-negro">Perfil: Profesor</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-md-10 offset-md-1">
+                        <div class="alert alert-dismissible fade show bg-azul-txt-white" role="alert">
+                            Bienvenido Profesor(a) ...
+                            <strong>{{this.profesor.apellido}}</strong> , recuerde <strong>Cerrar Sesión</strong> al terminar de usar los servicios del sistema.
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                    </div>
+                    <div class="col-md-6 offset-3 final">
+                        <div class="alert bg-azul-txt-white" role="alert">
+                            *Para mas información consulte el <a type="button" href="manuales/profesor" target="_blank">Manual de usuario</a>.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

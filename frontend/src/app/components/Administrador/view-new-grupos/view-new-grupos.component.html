@@ -1,0 +1,51 @@
+<div class="row">
+    <div class="col-md-2 ml-auto">
+        <button class="cerrar" (keydown)="key($event)" (click)="click()">X</button>
+    </div>
+</div>
+<mat-dialog-content>
+    <table mat-table [dataSource]="data" matSort class="mat-elevation-z8">
+        <!-- Profesor Column -->
+        <ng-container matColumnDef="clave_profesor">
+            <th class="profesor" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Profesor</p>
+            </th>
+            <td class="profesor" mat-cell *matCellDef="let element"> {{element.rfc}} </td>
+        </ng-container>
+
+        <!-- Materia Column -->
+        <ng-container matColumnDef="clave_materia">
+            <th class="materia" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Materia</p>
+            </th>
+            <td class="materia" mat-cell *matCellDef="let element"> {{element.clave_materia}} </td>
+        </ng-container>
+
+        <!-- Grupo Column -->
+        <ng-container matColumnDef="grupo">
+            <th class="grupo" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Grupo</p>
+            </th>
+            <td class="grupo" mat-cell *matCellDef="let element"> {{element.grupo}} </td>
+        </ng-container>
+
+        <!-- inicio Column -->
+        <ng-container matColumnDef="hora_inicio">
+            <th class="center" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Hora Inicio</p>
+            </th>
+            <td class="center" mat-cell *matCellDef="let element"> {{element.hora_inicio}} </td>
+        </ng-container>
+
+        <!-- final Column -->
+        <ng-container matColumnDef="hora_final">
+            <th class="center" mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Hora Final</p>
+            </th>
+            <td class="center" mat-cell *matCellDef="let element"> {{element.hora_final}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</mat-dialog-content>

@@ -1,0 +1,72 @@
+<div class="container  pt-1">
+    <mat-sidenav-container class="sidenav">
+        <mat-sidenav #sidenav [mode]="mode.value">
+            <mat-grid-list cols="2" rowHeight="43px">
+                <mat-grid-tile class="mat-elevation-z8" [colspan]="1" [rowspan]="1">
+                    <button mat-button (click)="sidenav.toggle()">
+                        <mat-icon class="hamburguesa">reorder</mat-icon>
+                    </button>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <app-admin-navegacion>
+            </app-admin-navegacion>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <mat-grid-list cols="12" rowHeight="43px">
+                <mat-grid-tile class="mat-elevation-z8" [colspan]="1" [rowspan]="1">
+                    <button mat-button (click)="sidenav.toggle()">
+                        <mat-icon class="hamburguesa-content">reorder</mat-icon>
+                    </button>
+                </mat-grid-tile>
+                <mat-grid-tile class="mat-elevation-z8" [colspan]="11" [rowspan]="1">
+                    <h1 class="titulo-negro">Sección: Profesores</h1>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <!--*ngIf="grupos.length == 0"-->
+                            <div class="col-md-5 offset-md-1">
+                                <mat-slide-toggle [checked]='checked' color="warn" (change)="cambiar()">
+                                    <h5 *ngIf="checked">Agregar manual</h5>
+                                    <h5 *ngIf="!checked">Agregar desde archivo</h5>
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-8">
+                        <div class="row justify-content-around">
+                            <div class="col-md-8">
+                                <app-add-grupos>
+                                </app-add-grupos>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <app-generate-formato>
+                                </app-generate-formato>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-md-4">
+                        <!--*ngIf="grupos.length == 0"-->
+                        <div *ngIf="!checked">
+                            <app-add-profesor>
+                            </app-add-profesor>
+                        </div>
+                        <div *ngIf="checked">
+                            <app-add-profesores>
+                            </app-add-profesores>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-5" *ngIf="grupos.length != 0">
+                        <app-listar-grupos-preview></app-listar-grupos-preview>
+                    </div> -->
+                    <div class="col-md-8 text-center">
+                        <app-listar-profesores>
+                        </app-listar-profesores>
+                    </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

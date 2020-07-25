@@ -1,0 +1,55 @@
+<div class="container  pt-1">
+    <mat-sidenav-container class="sidenav">
+        <mat-sidenav #sidenav [mode]="mode.value">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 mat-elevation-z8">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <button mat-button (click)="sidenav.toggle()">
+                                    <mat-icon class="dark-hamburguesa">reorder</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-est-navegacion></app-est-navegacion>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 mat-elevation-z8">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <button mat-button (click)="sidenav.toggle()">
+                                    <mat-icon class="dark-hamburguesa">reorder</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-11 mat-elevation-z8 text-center">
+                        <h1 class="titulo-negro">Sección: Mis Grupos</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-4 mt-2" *ngFor="let grupo of grupos">
+                        <mat-card class="mat-elevation-z8">
+                            <mat-card-header class="bg-azul scrollHead">
+                                <h4 class="text-white hijo">{{grupo.nombre_materia}}</h4>
+                            </mat-card-header>
+                            <mat-card-content class="scroll text-center">
+                                <h5>
+                                    <button #boton mat-button class="titulo-negro" (click)="openDialog(boton._elementRef.nativeElement)" [id]="grupo.id_grupo" [name]="grupo.clave_materia"> {{ grupo.clave_grupo }}</button>
+                                </h5>
+                                <p class="titulo-negro">{{grupo.hora_inicio}}--{{grupo.hora_final}}</p>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

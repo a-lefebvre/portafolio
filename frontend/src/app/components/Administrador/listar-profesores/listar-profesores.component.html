@@ -1,0 +1,52 @@
+<div class="scroll">
+    <table mat-table [dataSource]="profesores" matSort class="mat-elevation-z8">
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+            <th mat-header-cell *matHeaderCellDef>
+                <button mat-button (click)="deleteProfesor()">Borrar</button>
+            </th>
+            <td class="center" mat-cell *matCellDef="let row">
+                <!-- <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null" [checked]="selection.isSelected(row)" color="warn" [aria-label]="checkboxLabel(row)">
+                </mat-checkbox> -->
+                <mat-radio-group class="example-radio-group" [(ngModel)]="clave_profesor">
+                    <mat-radio-button class="example-radio-button" [value]="row" color="warn">
+
+                    </mat-radio-button>
+                </mat-radio-group>
+            </td>
+        </ng-container>
+        <!-- Clave Column -->
+        <ng-container matColumnDef="clave_profesor">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">RFC</p>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.clave_profesor}} </td>
+        </ng-container>
+        <!-- Name Column -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Nombre</p>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+        </ng-container>
+
+        <!-- Apellido Column -->
+        <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Apellido</p>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.apellido}} </td>
+        </ng-container>
+
+        <!-- Email Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <p class="tabla-head">Correo</p>
+            </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="selection.toggle(row)"></tr>
+    </table>
+</div>

@@ -1,0 +1,42 @@
+<div class="row">
+    <div class="col-md-3 ml-auto">
+        <button class="cerrar" (keydown)="key($event)" (click)=click()>X</button>
+    </div>
+</div>
+<form (ngSubmit)="validarActividad()" class="bg-white">
+    <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Nombre de la actívidad</mat-label>
+        <input matInput [formControl]="nombreFormcontrol" [(ngModel)]="actividad.nombre_actividad" (change)="validar()" (keypress)="capitaliza()" placeholder="Nombre de actividad">
+        <mat-error *ngIf="nombreFormcontrol.hasError('minlength') && !nombreFormcontrol.hasError('required')">
+            Nombre demasiado <strong>corto</strong>
+        </mat-error>
+        <mat-error *ngIf="nombreFormcontrol.hasError('required') ">
+            Este campo es <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Valor de la actívidad</mat-label>
+        <input matInput [formControl]="valorFormcontrol" [(ngModel)]="actividad.valor" (change)="validar()" (keypress)="validarNumero($event)" (keydown)="validar()" placeholder="valor de actividad">
+        <mat-error *ngIf="valorFormcontrol.hasError('max') && !valorFormcontrol.hasError('required') && !valorFormcontrol.hasError('pattern')">
+            Valor fuera del rango
+        </mat-error>
+        <mat-error *ngIf="valorFormcontrol.hasError('pattern') && !valorFormcontrol.hasError('required')">
+            Valor <strong>inválido</strong>
+        </mat-error>
+        <mat-error *ngIf="valorFormcontrol.hasError('required') ">
+            Este campo es <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="inputs">
+        <mat-label>Descripción de la actívidad</mat-label>
+        <textarea class="scroll" matInput (keypress)="capitaliza()" name="descripcion" [(ngModel)]="actividad.descripcion" placeholder="Descripcion"></textarea>
+    </mat-form-field>
+    <div class="row">
+        <div class="col-md-3">
+            <button mat-raised-button type="submit" [disabled]="disableBtn">Guardar</button>
+        </div>
+        <div class="col-md-7 offset-md-1">
+            <p class="subtitulo">Puntos totales: {{ getTotalPuntos() }}/100</p>
+        </div>
+    </div>
+</form>

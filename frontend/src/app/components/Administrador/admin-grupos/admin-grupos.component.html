@@ -1,0 +1,47 @@
+<div class="container  pt-1">
+    <mat-sidenav-container class="sidenav">
+        <mat-sidenav #sidenav [mode]="mode.value">
+            <mat-grid-list cols="2" rowHeight="43px">
+                <mat-grid-tile class="mat-elevation-z8" [colspan]="1" [rowspan]="1">
+                    <button mat-button (click)="sidenav.toggle()">
+                        <mat-icon class="hamburguesa">reorder</mat-icon>
+                    </button>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <app-admin-navegacion>
+            </app-admin-navegacion>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <mat-grid-list cols="12" rowHeight="43px">
+                <mat-grid-tile class="mat-elevation-z8" [colspan]="1" [rowspan]="1">
+                    <button mat-button (click)="sidenav.toggle()">
+                        <mat-icon class="hamburguesa-content">reorder</mat-icon>
+                    </button>
+                </mat-grid-tile>
+                <mat-grid-tile class="mat-elevation-z8" [colspan]="11" [rowspan]="1">
+                    <h1 class="titulo-negro">Sección: Grupos Asignados</h1>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <app-listar-grupos>
+                        </app-listar-grupos>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row justify-content-center">
+                            <div class="col-10 mb-2 mt-4">
+                                <app-generate-formato tipo="grupos">
+                                </app-generate-formato>
+                            </div>
+                            <div class="col-12">
+                                <app-add-grupos>
+                                </app-add-grupos>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

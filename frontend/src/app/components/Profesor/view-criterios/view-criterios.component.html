@@ -1,0 +1,33 @@
+<mat-dialog-content>
+    <table mat-table [dataSource]="criterios">
+        <!-- Item Column -->
+        <ng-container matColumnDef="nombre">
+            <th class="nombre" mat-header-cell *matHeaderCellDef> Nombre </th>
+            <td class="nombre" mat-cell *matCellDef="let criterio"> {{criterio.nombre_criterio}} </td>
+            <td class="nombre" mat-footer-cell *matFooterCellDef> Total </td>
+        </ng-container>
+
+        <!-- percent Column -->
+        <ng-container matColumnDef="porcentaje" class="mr-auto">
+            <th class="porcentaje" mat-header-cell *matHeaderCellDef> Porcentaje </th>
+            <td class="porcentaje" mat-cell *matCellDef="let criterio"> {{(criterio.porcentaje / 100) | percent: '2.0'}} </td>
+            <td class="porcentaje" mat-footer-cell *matFooterCellDef> {{getTotalPorcentaje() / 100 | percent: '2.0'}} </td>
+        </ng-container>
+
+        <!-- opciones Column -->
+        <ng-container matColumnDef="opciones">
+            <th class="icons" mat-header-cell *matHeaderCellDef> Opciones </th>
+            <td class="icons" mat-cell *matCellDef="let criterio">
+                <mat-icon class="add" [id]="criterio.id_criterio" (click)="addActividad($event)" matTooltip="Presiona para agregar nueva actividad al criterio" matTooltipPosition='above'>add_circle</mat-icon>
+                <mat-icon class="view" [id]="criterio.id_criterio" (click)="viewActividad($event)" matTooltip="Presiona para visualizar las actividades creadas" matTooltipPosition='above'>visibility</mat-icon>
+                <mat-icon class="delete" [id]="criterio.id_criterio" (click)="deleteCriterio($event)" matTooltip="Presiona para eliminar este criterio criterio" matTooltipPosition='after'>delete</mat-icon>
+            </td>
+            <td mat-footer-cell *matFooterCellDef></td>
+
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+    </table>
+</mat-dialog-content>

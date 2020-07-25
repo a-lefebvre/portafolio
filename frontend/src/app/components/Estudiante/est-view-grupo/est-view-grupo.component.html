@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-md-11">
+        <div class="row">
+            <div class="col-md-9">
+                <h1 class="titulo-negro">Materia: {{grupo.nombre_materia}}</h1>
+            </div>
+            <div class="col-md-3 text-right">
+                <h1 class="titulo-negro">Grupo: {{grupo.clave_grupo}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1 ml-auto">
+        <button class="cerrar" (keydown)="key($event)" (click)=click()>X</button>
+    </div>
+</div>
+<mat-tab-group mat-align-tabs="center" class="bg-white" tabindex="0" (keydown)="key($event)">
+    <mat-tab label="lista de asistencias">
+        <div class="container">
+            <app-est-asistencias></app-est-asistencias>
+        </div>
+    </mat-tab>
+    <mat-tab label="Criterios">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <app-est-criterios></app-est-criterios>
+                </div>
+                <div class="col-md-6">
+                    <app-est-actividades></app-est-actividades>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Calificaciones">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <app-est-calif-parciales></app-est-calif-parciales>
+                </div>
+                <div class="col-md-6">
+                    <app-est-calif-actividades></app-est-calif-actividades>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+</mat-tab-group>

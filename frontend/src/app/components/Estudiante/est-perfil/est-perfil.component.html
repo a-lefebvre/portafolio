@@ -1,0 +1,112 @@
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <mat-card class="mat-elevation-z8">
+                            <div class="imagen mb-5">
+                                <p class="titulo-negro">ESTUDIANTE</p>
+                                <!-- <input type="file" (change)="onChange($event)" name="image" id="image" accept=".jpeg, .jpg, .png">
+                                <img class="img-fluid redondo" [src]="estudiante.img_perfil" alt="user"> -->
+                            </div>
+                            <mat-card-content class="text-center">
+                                <p class="titulo">
+                                    {{estudiante.num_control}}
+                                </p>
+                                <p class="titulo">
+                                    {{estudiante.nombre_est}}
+                                </p>
+                                <p class="titulo">
+                                    {{estudiante.email_est}}
+                                </p>
+                                <p class="titulo">
+                                    <mat-divider></mat-divider>
+                                </p>
+                            </mat-card-content>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col mt-3">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        <mat-card>
+                            <form (ngSubmit)="updateInfo()">
+                                <mat-card-content>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-8 offset-md-2 text-center">
+                                                <p class="titulo">Información Básica</p>
+                                            </div>
+                                            <div class="col-md-4 offset-md-4">
+                                                <mat-form-field appearance="outline" class="inputs" matTooltip="Número de control para iniciar sesión" matTooltipPosition='before'>
+                                                    <mat-label>Nº de control</mat-label>
+                                                    <input matInput name="clave" [(ngModel)]="estudiante.num_control" readonly>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-form-field appearance="outline" class="inputs">
+                                                    <mat-label>Contraseña</mat-label>
+                                                    <input matInput [(ngModel)]="estudiante.password_est" (change)="validar()" (keyup)="validar()" [type]="hide ? 'password' : 'text'" [formControl]="passwordFormcontrol" placeholder="Contraseña">
+                                                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                                                    <mat-error *ngIf="passwordFormcontrol.hasError('minlength') && !passwordFormcontrol.hasError('required')">
+                                                        Contraseña debe tener al menos 6 caracteres
+                                                    </mat-error>
+                                                    <mat-error *ngIf="passwordFormcontrol.hasError( 'required') ">
+                                                        Contraseña <strong>obligatoria</strong>
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-form-field appearance="outline" class="inputs">
+                                                    <mat-label>Confirma tu contraseña</mat-label>
+                                                    <input matInput [(ngModel)]="confirm_password" (change)="validar()" (keyup)="validar()" [type]="hide ? 'password' : 'text'" [formControl]="confirm_passFormcontrol" placeholder="Contraseña">
+                                                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                                                    <mat-error *ngIf="confirm_passFormcontrol.hasError( 'required') ">
+                                                        Confirmación <strong>obligatoria</strong>
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <mat-form-field appearance="outline" class="inputs">
+                                                    <mat-label>Email</mat-label>
+                                                    <input matInput [formControl]="emailFormcontrol" (change)="validar()" (keyup)="validar()" [(ngModel)]="estudiante.email_est" placeholder="Email">
+                                                    <mat-error *ngIf="emailFormcontrol.hasError('email') && !emailFormcontrol.hasError('required')">
+                                                        Por favor ingresa un email válido
+                                                    </mat-error>
+                                                    <mat-error *ngIf="emailFormcontrol.hasError('required')">
+                                                        Email <strong>obligatorio</strong>
+                                                    </mat-error>
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-md-8 offset-md-2 text-center">
+                                                <p class="titulo">Información Personal</p>
+                                            </div>
+                                            <div class="col-md-12">
+                                                <mat-form-field appearance="outline" class="inputs">
+                                                    <mat-label>Nombre completo</mat-label>
+                                                    <input matInput [(ngModel)]="estudiante.nombre_est" name="nombre_est" placeholder="Nombre completo" readonly>
+                                                </mat-form-field>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-card-content>
+                                <mat-card-footer class="mb-4">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-12 text-right">
+                                                <button mat-raised-button type="submit" [disabled]="disableBtnGuardar">Actualizar información</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </mat-card-footer>
+                            </form>
+                        </mat-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

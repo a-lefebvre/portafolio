@@ -1,0 +1,69 @@
+table {
+    width: 100%;
+    height: 100%;
+}
+
+.scroll {
+    min-height: auto;
+    max-height: 450px;
+    /* height: 450px; */
+    width: 100%;
+    overflow: scroll;
+}
+
+.checks {
+    text-align: center;
+}
+
+.filtro {
+    background-color: white;
+}
+
+th {
+    text-align: center;
+    align-items: center;
+}
+
+button {
+    outline: none;
+    background-color: transparent;
+}
+
+button :hover {
+    background-color: transparent;
+}
+
+.centrar {
+    text-align: center;
+}
+
+.borrar {
+    width: 5%;
+    color: red;
+}
+
+.rfc {
+    width: 17%;
+}
+
+
+/* td.rfc {
+    background-color: rgba(182, 220, 250, 0.171);
+} */
+
+.nombre {
+    width: 40%;
+}
+
+.materia {
+    width: 32%;
+}
+
+
+/* td.materia {
+    background-color: rgba(182, 220, 250, 0.171);
+} */
+
+.grupo {
+    width: 6%;
+}

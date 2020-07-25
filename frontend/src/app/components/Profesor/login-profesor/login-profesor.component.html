@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-md-3 ml-auto">
+        <button class="cerrar" (keydown)="key($event)" (click)=click()>X</button>
+    </div>
+</div>
+<mat-card>
+    <div class="bg-azul">
+        <div class="imagen">
+            <img mat-card-image class="img-fluid mx-auto" src="../../../assets/comunes/user.png" alt="login">
+        </div>
+        <div class="div-login">
+            <p class="inicioSesion">Inicia Sesión</p>
+        </div>
+    </div>
+    <form (ngSubmit)="loginProfesor()" novalidate #formulario="ngForm">
+        <mat-card-content>
+            <div class="row mt-2">
+                <div class="col-md-11">
+                    <mat-form-field hintLabel="13 caracteres" class="inputs">
+                        <input matInput #clave maxlength="13" minlength="13" [(ngModel)]="clave_profesor" (keypress)="capitaliza()" (keyup)="capitaliza()" name="clave" placeholder="Clave" ngModel required>
+                        <mat-hint align="end">{{clave.value?.length || 0}}/13</mat-hint>
+                        <mat-error *ngIf="clave.invalid">Clave invalida</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <mat-form-field class="inputs" matTooltip="Contraseña con 6 caracteres minimos" matTooltipPosition='after'>
+                        <input matInput [(ngModel)]="password" [type]="hide ? 'password' : 'text'" [formControl]="passFormControl" placeholder="Ingresa tu contraseña" ngModel required>
+                        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+                        <mat-error *ngIf="passFormControl.hasError('required')">
+                            Ingresa tu contraseña por favor.
+                        </mat-error>
+                        <mat-error *ngIf="passFormControl.hasError('minlength')">
+                            Contraseña muy corta.
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <mat-divider></mat-divider>
+                    <!-- <P class="cuenta">No tienes una cuenta? <a type="button" (click)="signUp()">REGISTRATE</a> </P> -->
+                </div>
+                <div class="col-md-12 mt-2">
+                    <mat-divider></mat-divider>
+                    <!-- <P class="cuenta">No tienes una cuenta? <a type="button" (click)="signUp()">REGISTRATE</a> </P> -->
+                </div>
+                <div class="col-md-12 mt-2">
+                    <mat-divider></mat-divider>
+                    <!-- <P class="cuenta">No tienes una cuenta? <a type="button" (click)="signUp()">REGISTRATE</a> </P> -->
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="container">
+                <div class="row">
+                    <div class="ml-auto">
+                        <button mat-raised-button class="btn-block" type="submit" [disabled]="formulario.invalid">Entrar</button>
+                    </div>
+                </div>
+            </div>
+        </mat-card-actions>
+    </form>
+</mat-card>

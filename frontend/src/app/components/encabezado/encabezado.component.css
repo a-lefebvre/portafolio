@@ -1,0 +1,25 @@
+.logoTecnm {
+    width: 100%;
+}
+
+.logoTec {
+    width: 100%;
+}
+
+.imgNombre {
+    height: 0px;
+}
+
+.inicio {
+    color: white;
+    font-weight: bold;
+}
+
+.titulo-negro {
+    font-size: small;
+}
+
+.navbar-toggler-icon,
+.navbar-toggler {
+    color: black;
+}

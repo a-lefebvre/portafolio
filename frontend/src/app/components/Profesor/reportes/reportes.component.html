@@ -1,0 +1,76 @@
+<div class="container pt-1">
+    <mat-sidenav-container class="sidenav">
+        <mat-sidenav #sidenav [mode]="mode.value">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 mat-elevation-z8">
+                        <div class="row">
+                            <div class="col-md-10 offset-md-1">
+                                <button mat-button (click)="sidenav.toggle()">
+                                    <mat-icon class="hamburguesa">reorder</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <app-navegacion>
+            </app-navegacion>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-1 mat-elevation-z8">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <button mat-button (click)="sidenav.toggle()">
+                                    <mat-icon class="dark-hamburguesa">reorder</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-11 mat-elevation-z8 text-center">
+                        <h1 class="titulo-negro">Sección: Listas</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="container pt-5 bg-blanco mat-elevation-z8">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="row mb-5">
+                            <div class="col-md-8 offset-md-2 text-center">
+                                <mat-slide-toggle [checked]='checked' color="warn" (change)="cambiar()">
+                                    <h5 *ngIf="checked">Calificaciones</h5>
+                                    <h5 *ngIf="!checked">Asistencias</h5>
+                                </mat-slide-toggle>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 mt-1 m-auto" *ngIf="!checked">
+                        <app-reporte-asistencias></app-reporte-asistencias>
+                    </div>
+                    <div class="col-md-2 offset-md-5" *ngIf="checked">
+                        <mat-form-field appearance="outline" class="inputs">
+                            <mat-label>Tipo de calificaciones ?</mat-label>
+                            <mat-select [(ngModel)]="opcion">
+                                <mat-option *ngFor="let opcion of opciones" [value]="opcion">
+                                    {{ opcion }}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-md-8 m-auto" *ngIf="checked && opcion == 'Final'">
+                        <div>
+                            <app-reporte-calificaciones-final></app-reporte-calificaciones-final>
+                        </div>
+                    </div>
+                    <div class="col-md-8 m-auto" *ngIf="checked && opcion == 'Parcial'">
+                        <div>
+                            <app-reporte-calificaciones-parcial></app-reporte-calificaciones-parcial>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+    height: 100%;
+}
+
+.scroll {
+    min-height: auto;
+    max-height: 500px;
+    /* height: 500px; */
+    width: 100%;
+    overflow: scroll;
+}
+
+.center {
+    text-align: center;
+}
+
+button {
+    outline: none;
+    color: red;
+}
+
+.example-radio-button {
+    margin: 5px;
+}
