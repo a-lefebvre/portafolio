@@ -17,6 +17,7 @@ export class PreviewFileComponent implements OnInit {
   watermark: string = '';
   footer: string = '';
   ip: string;
+  bandera: boolean = false;
   constructor(private adminstradorService: AdministradorService,
     private dataService: DataService) {
     this.config = new Config();
@@ -29,7 +30,7 @@ export class PreviewFileComponent implements OnInit {
       this.preview();
     });
   }
-  preview(){
+  async preview(){
     this.header = this.watermark = this.footer = `http://${this.ip}:3000/`;
     this.adminstradorService.getConfigFiles().subscribe(
       res =>{
@@ -37,6 +38,7 @@ export class PreviewFileComponent implements OnInit {
         this.header+=res[0].encabezado;
         this.watermark+=res[0].marca;
         this.footer+=res[0].pie;
+        this.bandera = true;
       }
     );
   }
@@ -146,6 +148,7 @@ export class PreviewFileComponent implements OnInit {
     this.pdf.add('hola mundo !!!!');
     this.pdf.add('hola mundo !!!!');
     this.pdf.create().open();
+    this.bandera = false;
   }
   async setHeader(){
     // let tecnm = await new Img(this.header).height(70).margin([30, 0, 30, 0]).build();

@@ -1,5 +1,5 @@
 <button (click)="preview()">Ver vista previa</button>
-<button (click)="initPDF()">Descargar</button>
+<button (click)="initPDF()" *ngIf="bandera">Descargar</button>
 <!-- <div class="header">
     <img [src]="header" class="img-fluid">
 </div>

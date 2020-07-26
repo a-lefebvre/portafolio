@@ -45,8 +45,8 @@ export class GraficasComponent implements OnInit {
   ];
   public lineChartColors: Color[] = [
     { // grey
-      backgroundColor: 'rgba(0, 49, 202,0.2)',
-      borderColor: 'rgba(0, 49, 202,1)',
+      backgroundColor: 'rgba(84, 172, 255,0.2)',
+      borderColor: 'rgba(84, 172, 255,1)',
       pointBackgroundColor: 'rgba(0, 49, 202,1)',
       pointBorderColor: '#fff',
       pointHoverBackgroundColor: '#fff',
@@ -87,7 +87,7 @@ export class GraficasComponent implements OnInit {
   public pieChartPlugins = [pluginDataLabels];
   public pieChartColors = [
     {
-      backgroundColor: ['rgba(3, 163, 49,0.5)', 'rgba(255,0,0,0.5)'],
+      backgroundColor: ['rgba(84, 172, 255,0.8)', 'rgba(255,0,0,0.4)'],
     },
   ];
 
