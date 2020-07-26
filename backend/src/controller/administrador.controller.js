@@ -113,7 +113,6 @@ adminCtrl.config_pie_file = (req, res) => {
     }
 }
 adminCtrl.getImagesFiles = (req, res) => {
-    console.log('hola');
     const consulta = 'select * from configuracion_archivo';
     conexion.query(consulta, (err, rows, fields) => {
         if (!err) {
