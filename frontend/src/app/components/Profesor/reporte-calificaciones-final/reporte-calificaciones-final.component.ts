@@ -119,7 +119,6 @@ export class ReporteCalificacionesFinalComponent implements OnInit {
     );
   }
   private getAlumnos(clave_profesor: string, id_grupo: string) {
-    this.data.push(this.columnas);
     this.detalleGrupoService.getEstudiantes(clave_profesor, id_grupo, '0').subscribe(
       res => {
         this.alumnos = res;
@@ -133,6 +132,11 @@ export class ReporteCalificacionesFinalComponent implements OnInit {
         }
       }
     );
+  }
+  private Comparator(a, b) {
+    if (a[2] < b[2]) return -1;
+    if (a[2] > b[2]) return 1;
+    return 0;
   }
   private getCalificaciones(clave_materia: string, clave_grupo: string, alumno: any, num: number){
     this.reporteService.getCalificacionByUnidadByEstudiante(clave_materia, clave_grupo, ''+alumno.num_control).subscribe(
@@ -191,6 +195,8 @@ export class ReporteCalificacionesFinalComponent implements OnInit {
         await this.setWatermark();
         // ---
     this.createFormulario();
+    this.data.sort(this.Comparator);
+    this.data.unshift(this.columnas);
     this.setTable(this.data);
     let date = new Date();
     let fecha = ''+date.getDate()+(date.getMonth()+1)+date.getFullYear();
