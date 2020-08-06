@@ -32,7 +32,7 @@
     "jquery": "^3.4.1",
     "jspdf": "^1.5.3",
     "jspdf-autotable": "^3.2.11",
-    "jszip": "^3.2.2",
+    "jszip": "^3.5.0",
     "ng2-charts": "^2.3.0",
     "ng2-pdf-viewer": "^6.1.0",
     "ngx-cookie-service": "^3.0.0",

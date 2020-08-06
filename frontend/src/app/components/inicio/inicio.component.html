@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-9 ">
             <div class="container text-right">
-                <button mat-icon-button class="inicio" [matMenuTriggerFor]="menu">
+                <button mat-icon-button class="inicio" [matMenuTriggerFor]="menu" (click)="test()">
                     Inicia Sesión
                   </button>
                 <mat-menu class="transparente100" #menu="matMenu" xPosition="before">

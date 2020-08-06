@@ -5,6 +5,8 @@ import { LoginAdminComponent } from '../Administrador/login-admin/login-admin.co
 import { LoginEstudianteComponent } from '../Estudiante/login-estudiante/login-estudiante.component';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import * as JSZip from 'jszip';
+import FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-inicio',
@@ -67,5 +69,103 @@ export class InicioComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+  test() {
+    let Zip = new JSZip();
+    for (let index = 0; index < 5; index++) {
+      let profesor = Zip.folder("Profesor"+(index+1));
+      let periodo = profesor.folder("Periodo ago-dic 2020");
+      let materias= periodo.folder("Web");
+      let grupos = materias.folder("ISA");
+      let califFinales = grupos.file("calif finales.pdf", "aca van los datos");
+      let unidad = grupos.folder("unidad 1");
+      let califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      let asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 2");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 3");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 4");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 5");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      grupos = materias.folder("ISU");
+      califFinales = grupos.file("calif finales.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 1");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 2");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 3");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 4");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 5");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      materias = periodo.folder("Ciencia de los datos");
+      grupos = materias.folder("ISB");
+      califFinales = grupos.file("calif finales.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 1");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 2");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 3");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 4");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 5");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      materias = periodo.folder("Calculo");
+      grupos = materias.folder("ISC");
+      califFinales = grupos.file("calif finales.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 1");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 2");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 3");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 4");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 5");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      grupos = materias.folder("ISU");
+      califFinales = grupos.file("calif finales.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 1");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 2");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 3");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 4");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      unidad = grupos.folder("unidad 5");
+      califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
+      asistencia = unidad.file("asistencia.pdf", "aca van los datos");
+      Zip.generateAsync({ type: "blob" }).then(function (content) {
+        FileSaver.saveAs(content, "download.zip");
+      });
+    }
   }
 }
