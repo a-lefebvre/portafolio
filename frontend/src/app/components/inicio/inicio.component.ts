@@ -71,8 +71,8 @@ export class InicioComponent implements OnInit {
     });
   }
   test() {
-    let Zip = new JSZip();
     for (let index = 0; index < 5; index++) {
+      let Zip = new JSZip();
       let profesor = Zip.folder("Profesor"+(index+1));
       let periodo = profesor.folder("Periodo ago-dic 2020");
       let materias= periodo.folder("Web");
@@ -164,7 +164,7 @@ export class InicioComponent implements OnInit {
       califParciales = unidad.file("calif parciales.pdf", "aca van los datos");
       asistencia = unidad.file("asistencia.pdf", "aca van los datos");
       Zip.generateAsync({ type: "blob" }).then(function (content) {
-        FileSaver.saveAs(content, "download.zip");
+        FileSaver.saveAs(content, "profesor"+(index+1)+".zip");
       });
     }
   }
